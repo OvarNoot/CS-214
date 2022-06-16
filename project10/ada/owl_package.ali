@@ -1,0 +1,76 @@
+V "GNAT Lib v7"
+P SS ZX
+
+RN
+RV NO_DISPATCHING_CALLS
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U owl_package%b		owl_package.adb		b1d358ca NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+U owl_package%s		owl_package.ads		4e5b0a5c EE OO PF PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.adb		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W flyingbird%s		flyingbird.adb		flyingbird.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+D ada.ads		20170106103348 76789da1 ada%s
+D a-except.ads		20151016123252 291912d5 ada.exceptions%s
+D a-ioexce.ads		20140225151544 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20141120112812 119b8fb3 ada.streams%s
+D a-tags.ads		20151016130316 01f5e3ef ada.tags%s
+D a-textio.ads		20140717063745 386df5d4 ada.text_io%s
+D a-unccon.ads		20170106103348 31484697 ada.unchecked_conversion%s
+D a-uncdea.ads		20070406091342 f15a5ed1 ada.unchecked_deallocation%s
+D bird_package.ads	20220325164407 b167fb80 bird_package%s
+D flyingbird.ads	20220325174618 1fca649a flyingbird%s
+D interfac.ads		20160502101001 5ab55268 interfaces%s
+D i-cstrea.ads		20140801100435 e53d8b8e interfaces.c_streams%s
+D owl_package.ads	20220325174247 51916ec6 owl_package%s
+D owl_package.adb	20220325174239 d82fc3d8 owl_package%b
+D system.ads		20170510173650 4635ec04 system%s
+D s-crtl.ads		20141120112812 0ebbdb71 system.crtl%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-ficobl.ads		20140718105747 078245e4 system.file_control_block%s
+D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
+D s-secsta.ads		20170112134946 9751b57e system.secondary_stack%s
+D s-soflin.ads		20151020124036 14e1eb6c system.soft_links%s
+D s-stache.ads		20140225151139 a37c21ec system.stack_checking%s
+D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
+D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20140801093848 ed88f8fb system.storage_elements%b
+D s-string.ads		20140225151139 8fe54fb7 system.strings%s
+D s-ststop.ads		20140225151139 e6693757 system.strings.stream_ops%s
+D s-traent.ads		20140730135025 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20140718092328 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 14|8r6 9r5
+X 6 a-textio.ads
+49K13*Text_IO 471e16 14|8w10 9r9
+X 9 bird_package.ads
+18U11*Init
+24V10*Name{string}
+X 10 flyingbird.ads
+10K9*flyingbird 27e15 13|8w6 8r22
+12R7*Flying_type<9|9R10> 25e19 13|12r22 28r26
+18V10*Movement{string}<9|48p10>
+X 13 owl_package.ads
+10K9*Owl_Package 28E10 33l5 33e16 14|11b14 34l5 34t16
+12R6*Owl_Type<10|12R7> 9|18p11 24p10 10|18P10 13|18P12 18r29 26P14 26r36
+. 28c10 31e19 14|19r29 30r36
+18V12*Call{string}<9|30p10> 18>17 14|19b12 22l9 22t13
+18r17 An_Owl{12R6} 14|19b17
+26V14*Type_Name{string}<9|36p10> 26>24 14|30b14 33l9 33t18
+26r24 An_Owl{12R6} 14|30b24
+
