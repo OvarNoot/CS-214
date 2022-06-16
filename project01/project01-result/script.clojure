@@ -1,0 +1,112 @@
+Script started on 2022-01-17 17:00:16-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="98" LINES="24"]
+]0;hh35@remotel1: ~/cs214/project/project01/clojure/src[01;32mhh35@remotel1[00m:[01;34m~/cs214/project/project01/clojure/src[00m$ -0  clojure -cp . -m rectangle_area
+
+To compute the area of a rectangle,
+ enter its width: 4.5
+ enter its length: 6.5
+
+The area is 29.250000
+
+
+The area is 29.25
+
+
+The area is 29.250000000000000
+
+]0;hh35@remotel1: ~/cs214/project/project01/clojure/src[01;32mhh35@remotel1[00m:[01;34m~/cs214/project/project01/clojure/src[00m$ cat rectangle_area. 
+cat: rectangle_area: No such file or directory
+]0;hh35@remotel1: ~/cs214/project/project01/clojure/src[01;32mhh35@remotel1[00m:[01;34m~/cs214/project/project01/clojure/src[00m$ cat rectnagle_area.cli j
+cat: rectnagle_area.clj: No such file or directory
+]0;hh35@remotel1: ~/cs214/project/project01/clojure/src[01;32mhh35@remotel1[00m:[01;34m~/cs214/project/project01/clojure/src[00m$ cat rectangle_are.clj
+cat: rectangle_are.clj: No such file or directory
+]0;hh35@remotel1: ~/cs214/project/project01/clojure/src[01;32mhh35@remotel1[00m:[01;34m~/cs214/project/project01/clojure/src[00m$ cd clojure
+bash: cd: clojure: No such file or directory
+]0;hh35@remotel1: ~/cs214/project/project01/clojure/src[01;32mhh35@remotel1[00m:[01;34m~/cs214/project/project01/clojure/src[00m$ c ls
+rectangle_area.clj  script.clojure
+]0;hh35@remotel1: ~/cs214/project/project01/clojure/src[01;32mhh35@remotel1[00m:[01;34m~/cs214/project/project01/clojure/src[00m$ cat cir   rectangle_area.clj
+;;; it calculates the area of rectangle
+;;;
+;;; get swidth and legnth of rectangle
+;;; outputs the area of rectangle
+;;;
+;;; Haim Hong
+;;; Jan 14 2022
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(ns rectangle_area)
+
+(defn rectangleArea [itsWidth itsLength]
+  (* itsWidth itsLength)
+)
+
+(defn -main []
+  (println "\nTo compute the area of a rectangle,") ;;; prints string 
+  (print   " enter its width: ") (flush)
+
+  (let
+   [width (read)] ;;; gets the input of width
+    (assert (>= width 0) "-main: width must be positive") ;;; check if the width is not negative
+    (print   " enter its length: ") (flush)
+    (let
+     [length (read)] ;;; gets the input of legnth
+      (assert (>= length 0) "-main: length must be positive") ;;; check if the length is not negative
+      (printf "\nThe area is %f\n\n" (rectangleArea width length)) ;; prints out the result with new line 
+
+      (print "\nThe area is ") ;;; prints string with new line
+      (print (rectangleArea width length)) ;;; prints out the radius using the function
+      (print "\n\n") ;;; prints new line
+
+      (printf "\nThe area is %.15f\n\n" (rectangleArea width length)) ;;; to 15th decimal places
+      ))
+  )]0;hh35@remotel1: ~/cs214/project/project01/clojure/src[01;32mhh35@remotel1[00m:[01;34m~/cs214/project/project01/clojure/src[00m$ clojure -cp . -m rectangle_area
+
+To compute the area of a rectangle,
+ enter its width: 4.5
+ enter its length: 3.5
+
+The area is 15.750000
+
+
+The area is 15.75
+
+
+The area is 15.750000000000000
+
+]0;hh35@remotel1: ~/cs214/project/project01/clojure/src[01;32mhh35@remotel1[00m:[01;34m~/cs214/project/project01/clojure/src[00m$ clojure -cp . 0m  -m rectnagle_area
+Execution error (FileNotFoundException) at clojure.main/main (main.java:40).
+Could not locate rectnagle_area__init.class, rectnagle_area.clj or rectnagle_area.cljc on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
+
+Full report at:
+/tmp/clojure-15804388651480858709.edn
+]0;hh35@remotel1: ~/cs214/project/project01/clojure/src[01;32mhh35@remotel1[00m:[01;34m~/cs214/project/project01/clojure/src[00m$ 4.9999      clojure -cp . 0m  -m rectangle_area
+
+To compute the area of a rectangle,
+ enter its width: 4.9999
+ enter its length: 5.9999
+
+The area is 29.998900
+
+
+The area is 29.998900010000003
+
+
+The area is 29.998900010000003
+
+]0;hh35@remotel1: ~/cs214/project/project01/clojure/src[01;32mhh35@remotel1[00m:[01;34m~/cs214/project/project01/clojure/src[00m$ clojure -cp . -m rectangle_area
+
+To compute the area of a rectangle,
+ enter its width: 3.9   3 2.546
+ enter its length: 4.1243
+
+The area is 10.500468
+
+
+The area is 10.5004678
+
+
+The area is 10.500467800000000
+
+]0;hh35@remotel1: ~/cs214/project/project01/clojure/src[01;32mhh35@remotel1[00m:[01;34m~/cs214/project/project01/clojure/src[00m$ exit
+exit
+
+Script done on 2022-01-17 17:02:41-05:00 [COMMAND_EXIT_CODE="0"]

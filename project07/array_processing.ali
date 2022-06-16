@@ -1,0 +1,79 @@
+V "GNAT Lib v7"
+M P W=b
+P SS ZX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLICIT_LOOPS
+RV SPARK_05
+
+U array_processing%b	array_processing.adb	1cbb0119 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+D ada.ads		20170106103348 76789da1 ada%s
+D a-except.ads		20151016123252 291912d5 ada.exceptions%s
+D a-flteio.ads		20070406091342 e18a47a0 ada.float_text_io%s
+D a-inteio.ads		20070406091342 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20140225151544 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20141120112812 119b8fb3 ada.streams%s
+D a-tags.ads		20151016130316 01f5e3ef ada.tags%s
+D a-textio.ads		20140717063745 386df5d4 ada.text_io%s
+D a-tiflio.ads		20140717063513 56fbda09 ada.text_io.float_io%s
+D a-tiinio.ads		20140717063513 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20170106103348 31484697 ada.unchecked_conversion%s
+D array_processing.adb	20220225184134 33173ac9 array_processing%b
+D interfac.ads		20160502101001 5ab55268 interfaces%s
+D i-cstrea.ads		20140801100435 e53d8b8e interfaces.c_streams%s
+D system.ads		20170510173650 4635ec04 system%s
+D s-crtl.ads		20141120112812 0ebbdb71 system.crtl%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-ficobl.ads		20140718105747 078245e4 system.file_control_block%s
+D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
+D s-secsta.ads		20170112134946 9751b57e system.secondary_stack%s
+D s-soflin.ads		20151020124036 14e1eb6c system.soft_links%s
+D s-stache.ads		20140225151139 a37c21ec system.stack_checking%s
+D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
+D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
+D s-traent.ads		20140730135025 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20140718092328 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 12|12r6 12r23 13r6 13r29 14r6 14r31
+X 3 a-flteio.ads
+20K13*Float_Text_IO[9|46] 12|13w10 13r33
+X 4 a-inteio.ads
+18K13*Integer_Text_IO[10|46] 12|14w10 14r35
+X 8 a-textio.ads
+49K13*Text_IO 471e16 12|12w10 12r27
+166U14*New_Line 12|57s13
+242U14*Put 12|27s9 43s13
+263U14*Put_Line 12|53s9
+X 9 a-tiflio.ads
+57U14*Get 12|44s13[3|20]
+68U14*Put 12|56s13[3|20]
+X 10 a-tiinio.ads
+56U14*Get 12|28s9[4|18]
+X 12 array_processing.adb
+16U11*array_processing 16b11 67l5 67t21
+18A6 Vector(float)<integer> 24r35 30r23 39r39 51r33 61r14
+20f1 input{float} 44m17 45r24
+24V14 Create_Vector{18A6} 24b14 34l9 34t22 61s24
+25i9 size{integer} 28m13 30r33
+30a13 anArray{18A6} 32r20
+39U15 readArray 39b15 39=26 47l9 47t18 64s5
+39a26 aVec{18A6} 41r18 45m13
+41i13 Y{integer} 45r18
+51U15 printArray 51b15 51>27 59l9 59t19 65s5
+51a27 aVec{18A6} 54r18 56r17
+54i13 Y{integer} 56r22
+61a5 array0{18A6} 64r16 65r17
+

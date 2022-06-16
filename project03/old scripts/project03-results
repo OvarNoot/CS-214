@@ -1,0 +1,251 @@
+Script started on 2022-02-01 20:53:54-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ cat letr ter_grade. s.d adb
+-- 
+-- Haim Hong
+-- Jan 27 2022
+--
+-- Input: grade in number
+-- Precondition: grade is one of 9~10, 8, 7, 6
+-- Output: Outputs right Letter Grades for it
+----------------------------------------------------
+
+with Ada.Text_IO, Ada.Integer_Text_IO;
+use  Ada.Text_IO, Ada.Integer_Text_IO;
+
+procedure letter_grades is
+
+   grade : Integer;
+   
+   -- replace this comment with the definition of yearCode()
+   function letterGrade(l: integer) return string is
+
+   begin
+    case l / 10 is -- after divison 
+        when 10 => return "A";   -- if equal to 10 then gives out right letter thatt matches for it
+        when 9 => return "A";
+        when 8 => return "B";
+        when 7 => return "C";
+        when 6 => return "D";
+        when others => return "F";
+    end case;
+   end letterGrade;
+
+begin                                          
+   Put("Enter your grades: ");  -- Prompt for input
+   Get(grade);                   -- Input
+   Put( letterGrade(grade) );        -- Convert and output
+   New_Line;
+end letter_grades;]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ ./letter        gnatmake_  letteR_  r_grades
+x86_64-linux-gnu-gcc-7 -c letter_grades.adb
+x86_64-linux-gnu-gnatbind-7 -x letter_grades.ali
+x86_64-linux-gnu-gnatlink-7 letter_grades.ali
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ le=   letter      ./letter_grades
+Enter your grades: 100
+A
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ ./letter_grades
+Enter your grades: 99
+A
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ ./letter_grades
+Enter your grades: 86
+B
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ ./letter_grades
+Enter your grades: 73
+C
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ ./letter_grades
+Enter your grades: 678 
+D
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ ./letter_grades
+Enter your grades: 54
+F
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ exit
+
+Script done on 2022-02-01 20:54:47-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-01 20:47:29-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="97" LINES="24"]
+]0;hh35@remotel3: ~/cs214/project/project03/clojure/src[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ cat letter_grades.clj
+;;;; driver for function letter_Grades
+
+;;;; gets grades and decide letter grades for it
+;;;; output the letter grade from the input
+
+;;;; Haim Hong
+;;;; Jan 27 2022
+;;;;;;;;;;;;;;;;
+(ns letter_grades)
+
+(defn letterGrades [grade]
+  (cond
+    (= (quot grade 10) 10) "A" ;;;; after diving and it equals to the number then it outputs the right letter grade for it
+    (= (quot grade 10) 9) "A"
+    (= (quot grade 10) 8) "B"
+    (= (quot grade 10) 7) "C"
+    (= (quot grade 10) 6) "D"
+    :else       "F"))  ;;;; when nothing matches then F
+
+(defn -main []
+  (print "\nEnter your grade: ") (flush)
+  (let
+   [grade (read)]                ; read grade
+    
+    (println (letterGrades grade) "\n")      ; display its code
+    )
+)
+
+]0;hh35@remotel3: ~/cs214/project/project03/clojure/src[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ clojure -m   cp . - -,m  m lettergrade     _grades
+
+Enter your grade: 100
+A 
+
+]0;hh35@remotel3: ~/cs214/project/project03/clojure/src[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ clojure -cp . -m letter_grades
+
+Enter your grade: 976 
+A 
+
+]0;hh35@remotel3: ~/cs214/project/project03/clojure/src[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ clojure -cp . -m letter_grades
+
+Enter your grade: 86
+B 
+
+]0;hh35@remotel3: ~/cs214/project/project03/clojure/src[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ clojure -cp . -m letter_grades
+
+Enter your grade: 74
+C 
+
+]0;hh35@remotel3: ~/cs214/project/project03/clojure/src[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ clojure -cp . -m letter_grades
+
+Enter your grade: 62
+D 
+
+]0;hh35@remotel3: ~/cs214/project/project03/clojure/src[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ clojure -cp . -m letter_grades
+
+Enter your grade: 58
+F 
+
+]0;hh35@remotel3: ~/cs214/project/project03/clojure/src[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ exit
+
+Script done on 2022-02-01 20:48:24-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-01 20:44:34-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="97" LINES="24"]
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ cat LetterGrades.java
+/* LetterGrades.java is a driver for function LetterGrades
+ *
+ * Begun by: Prof. Adams, for CS 214 at Calvin College.
+ * Haim Hong
+ * Jan 27 2022
+ ****************************************************************/
+
+import java.util.Scanner;
+
+public class LetterGrades {
+
+   public static void main(String[] args) {
+      Scanner keyboard = new Scanner(System.in);
+      System.out.println("\nEnter your grade: "); // prompt
+
+      int grade = Integer.parseInt(keyboard.next());      // read grade and to int
+      System.out.println(letterGrade(grade)); // display its code
+   }
+   public static char letterGrade(int average)
+   {
+      switch (average / 10)
+      {
+         case 10: case 9: // checkes for each cases to find what matches average and returns right Letter grade for it
+            return 'A';
+         case 8:
+            return 'B';
+         case 7:
+            return 'C';
+         case 6:
+            return 'D';
+         default:
+            return 'F';
+      }
+   }
+}]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ javac -deprecation LetterGrades.java
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ java a LetterGrade
+Error: Could not find or load main class LetterGrade
+Caused by: java.lang.ClassNotFoundException: LetterGrade
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ java Leg tterGrades
+
+Enter your grade: 
+100
+A
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ java LetterGrades
+
+Enter your grade: 
+95
+A
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ java LetterGrades
+
+Enter your grade: 
+87
+B
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ java LetterGrades
+
+Enter your grade: 
+77
+C
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ java LetterGrades
+
+Enter your grade: 
+63
+D
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ java LetterGrades55  
+
+Enter your grade: 
+55
+F
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ java LetterGrades
+
+Enter your grade: 
+1 30
+F
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ exit
+
+Script done on 2022-02-01 20:45:35-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-01 20:48:42-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="97" LINES="24"]
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ cat letter_grades.rb
+# gets grade and converts into grade
+# Haim Hong
+# Jan 21
+################
+
+def letterGrade(y) # goes through each cases after dividing it
+    y = y / 10
+    case y
+    when 9..10 # when its 9 to 10 then A and changes for each cases
+        "A"
+    when 8
+        "B"
+    when 7
+        "C"
+    when 6
+        "D"
+    else
+        "F"
+    end
+end
+if __FILE__ == $0
+    print "Enter the grade: "
+    grade = gets.to_i # gets input and converts to int
+    print "Your Grade is: "
+    puts letterGrade(grade) # output the result you got from cases statements
+ end]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$   ruby letter_gradesrb  .rb
+Enter the grade: 100
+Your Grade is: A
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ ruby letter_grades.rb
+Enter the grade: 96
+Your Grade is: A
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ ruby letter_grades.rb
+Enter the grade: 88
+Your Grade is: B
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ ruby letter_grades.rb
+Enter the grade: 73
+Your Grade is: C
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ ruby letter_grades.rb
+Enter the grade: 63 6
+Your Grade is: D
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ ruby letter_grades.rb
+Enter the grade: 52
+Your Grade is: F
+]0;hh35@remotel3: ~/cs214/project/project03[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03[00m$ exit
+
+Script done on 2022-02-01 20:49:23-05:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,328 @@
+Script started on 2022-02-02 20:24:23-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="101" LINES="24"]
+]0;hh35@gold18: ~/cs214/project/project03[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project03[00m$ cat LetterGrades.java
+/* LetterGrades.java is a driver for function LetterGrades
+ *
+ * Begun by: Prof. Adams, for CS 214 at Calvin College.
+ * Haim Hong
+ * Jan 27 2022
+ ****************************************************************/
+
+import java.util.Scanner;
+
+public class LetterGrades {
+
+   public static void main(String[] args) {
+      for (int i = 100; i > 50; i-=3){ // looping until i is below 50
+         System.out.println("\nTesting grade: " + i); // prints out the Grade its testing currently
+         System.out.println(letterGrade(i)); // display its proper gRADE
+      }
+   }
+   public static char letterGrade(int average)
+   {
+      switch (average / 10)
+      {
+         case 10: case 9: // checkes for each cases to find what matches average and returns right Letter grade for it
+            return 'A';
+         case 8:
+            return 'B';
+         case 7:
+            return 'C';
+         case 6:
+            return 'D';
+         default:
+            return 'F';
+      }
+   }
+}]0;hh35@gold18: ~/cs214/project/project03[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project03[00m$ jav   cat LetterGrades.java[6P./letter_grades[7@gnatmake letter_grades[1Pcat letter_grades.adbgnatmake letter_grades[7P./letter_gradescat LetterGrades.java[Kcat LetterGrades.java[6P./letter_gradescat LetterGrades.java[6P./letter_grades[7@gnatmake letter_grades[1Pcat letter_grades.adbaruby letter_grades.rbcat letter_grades.adaruby letter_grades.rb[1Pcat letter_grades.rblojure -cp . -m letter_grades[9Pat letter_grades.clj[Kgrades.cljlojure -cp . -m letter_grades[10Pat letter_grades.rb[1@ruby letter_grades.rbcat letter_grades.adabgnatmake letter_grades[7P./letter_gradescat LetterGrades.java[Kcat LetterGrades.java[6P./letter_gradescat LetterGrades.java[Kjavac p-  -deprecation LetterGrades.java
+]0;hh35@gold18: ~/cs214/project/project03[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project03[00m$ java LEtte    etterGrades
+
+Testing grade: 100
+A
+
+Testing grade: 97
+A
+
+Testing grade: 94
+A
+
+Testing grade: 91
+A
+
+Testing grade: 88
+B
+
+Testing grade: 85
+B
+
+Testing grade: 82
+B
+
+Testing grade: 79
+C
+
+Testing grade: 76
+C
+
+Testing grade: 73
+C
+
+Testing grade: 70
+C
+
+Testing grade: 67
+D
+
+Testing grade: 64
+D
+
+Testing grade: 61
+D
+
+Testing grade: 58
+F
+
+Testing grade: 55
+F
+
+Testing grade: 52
+F
+]0;hh35@gold18: ~/cs214/project/project03[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project03[00m$ exit
+
+Script done on 2022-02-02 20:25:12-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-02 20:23:10-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="101" LINES="24"]
+]0;hh35@gold18: ~/cs214/project/project03[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project03[00m$ cat letter_grades.da  ada
+cat: letter_grades.ada: No such file or directory
+]0;hh35@gold18: ~/cs214/project/project03[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project03[00m$ cat letter_grades.ada  db
+-- 
+-- Haim Hong
+-- Jan 27 2022
+--
+-- Input: grade in number
+-- Precondition: grade is one of 9~10, 8, 7, 6
+-- Output: Outputs right Letter Grades for it
+----------------------------------------------------
+
+with Ada.Text_IO, Ada.Integer_Text_IO;
+use  Ada.Text_IO, Ada.Integer_Text_IO;
+
+procedure letter_grades is
+
+   grade : Integer := 100;
+   
+   -- replace this comment with the definition of yearCode()
+   function letterGrade(l: integer) return string is
+
+   begin
+    case l / 10 is -- after divison 
+        when 10 => return "A";   -- if equal to 10 then gives out right letter thatt matches for it
+        when 9 => return "A";
+        when 8 => return "B";
+        when 7 => return "C";
+        when 6 => return "D";
+        when others => return "F";
+    end case;
+   end letterGrade;
+
+begin  
+
+   while grade >= 50 loop -- loop until 50 or below                              
+      Put_Line("Testing grades: " & Integer'Image(grade));  -- Prompt for input
+      Put( letterGrade(grade) );        -- output the Proper Letter Grade for it
+      New_Line;
+      grade := grade - 3; -- Deducts 3 so it will eventually reach 50
+   end loop;
+end letter_grades;]0;hh35@gold18: ~/cs214/project/project03[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project03[00m$ gnatmake lettr er_grades
+x86_64-linux-gnu-gcc-7 -c letter_grades.adb
+x86_64-linux-gnu-gnatbind-7 -x letter_grades.ali
+x86_64-linux-gnu-gnatlink-7 letter_grades.ali
+]0;hh35@gold18: ~/cs214/project/project03[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project03[00m$ ./letter_grades
+Testing grades:  100
+A
+Testing grades:  97
+A
+Testing grades:  94
+A
+Testing grades:  91
+A
+Testing grades:  88
+B
+Testing grades:  85
+B
+Testing grades:  82
+B
+Testing grades:  79
+C
+Testing grades:  76
+C
+Testing grades:  73
+C
+Testing grades:  70
+C
+Testing grades:  67
+D
+Testing grades:  64
+D
+Testing grades:  61
+D
+Testing grades:  58
+F
+Testing grades:  55
+F
+Testing grades:  52
+F
+]0;hh35@gold18: ~/cs214/project/project03[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project03[00m$ exit
+
+Script done on 2022-02-02 20:23:53-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-02 20:21:04-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="101" LINES="24"]
+]0;hh35@gold18: ~/cs214/project/project03/clojure/src[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ cat letter_grades./ clj
+;;;; driver for function letter_Grades
+
+;;;; gets grades and decide letter grades for it
+;;;; output the letter grade from the input
+
+;;;; Haim Hong
+;;;; Jan 27 2022
+;;;;;;;;;;;;;;;;
+(ns letter_grades)
+
+(defn letterGrades [grade]
+  (cond
+    (= (quot grade 10) 10) "A" ;;;; after diving and it equals to the number then it outputs the right letter grade for it
+    (= (quot grade 10) 9) "A"
+    (= (quot grade 10) 8) "B"
+    (= (quot grade 10) 7) "C"
+    (= (quot grade 10) 6) "D"
+    :else       "F"))  ;;;; when nothing matches then F
+
+(defn -main []
+    (loop [x 100] ;; looping until it goes below 50
+          (when  (> x 50)
+            (print "\nTesting grade: " x) (flush) ;; prints out the grade its testing for
+            (println "\n" (letterGrades x)) ;; prints out the result
+            (recur(- x 3))))     ; recursion to go back to loop
+)
+
+]0;hh35@gold18: ~/cs214/project/project03/clojure/src[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ clojure -cp .   p - . -m c letter_grades
+
+Testing grade:  100
+ A
+
+Testing grade:  97
+ A
+
+Testing grade:  94
+ A
+
+Testing grade:  91
+ A
+
+Testing grade:  88
+ B
+
+Testing grade:  85
+ B
+
+Testing grade:  82
+ B
+
+Testing grade:  79
+ C
+
+Testing grade:  76
+ C
+
+Testing grade:  73
+ C
+
+Testing grade:  70
+ C
+
+Testing grade:  67
+ D
+
+Testing grade:  64
+ D
+
+Testing grade:  61
+ D
+
+Testing grade:  58
+ F
+
+Testing grade:  55
+ F
+
+Testing grade:  52
+ F
+]0;hh35@gold18: ~/cs214/project/project03/clojure/src[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ exit
+
+Script done on 2022-02-02 20:21:29-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-02 20:21:59-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="101" LINES="24"]
+]0;hh35@gold18: ~/cs214/project/project03[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project03[00m$ cat letter_grades.rb
+# gets grade and converts into grade
+# Haim Hong
+# Jan 31
+################
+
+def letterGrade(y) # goes through each cases after dividing it
+    y = y / 10
+    case y
+    when 9..10 # when its 9 to 10 then A and changes for each cases
+        "A"
+    when 8
+        "B"
+    when 7
+        "C"
+    when 6
+        "D"
+    else
+        "F"
+    end
+end
+if __FILE__ == $0
+    i = 100
+    while i >= 50 # looping until goes below 50
+
+        print "Testing grade: " + i.to_s + "\n" # printing out grade testing for by changining int to string
+        print "Your Grade is: "
+        puts letterGrade(i) # output the result you got from cases statements
+        i -= 3 # deducting by 3 points 
+    end
+ end]0;hh35@gold18: ~/cs214/project/project03[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project03[00m$ ruby letter_grades.rb
+Testing grade: 100
+Your Grade is: A
+Testing grade: 97
+Your Grade is: A
+Testing grade: 94
+Your Grade is: A
+Testing grade: 91
+Your Grade is: A
+Testing grade: 88
+Your Grade is: B
+Testing grade: 85
+Your Grade is: B
+Testing grade: 82
+Your Grade is: B
+Testing grade: 79
+Your Grade is: C
+Testing grade: 76
+Your Grade is: C
+Testing grade: 73
+Your Grade is: C
+Testing grade: 70
+Your Grade is: C
+Testing grade: 67
+Your Grade is: D
+Testing grade: 64
+Your Grade is: D
+Testing grade: 61
+Your Grade is: D
+Testing grade: 58
+Your Grade is: F
+Testing grade: 55
+Your Grade is: F
+Testing grade: 52
+Your Grade is: F
+]0;hh35@gold18: ~/cs214/project/project03[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project03[00m$ exit
+
+Script done on 2022-02-02 20:23:00-05:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,95 @@
+V "GNAT Lib v7"
+M P W=b
+A -gnata
+P SS ZX
+
+RN
+RV NO_IO
+RV NO_SECONDARY_STACK
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV SPARK_05
+
+U name_tester%b		name_tester.adb		002ed853 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W system.assertions%s	s-assert.adb		s-assert.ali
+W system.concat_5%s	s-conca5.adb		s-conca5.ali
+W system.concat_6%s	s-conca6.adb		s-conca6.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+D ada.ads		20170106103348 76789da1 ada%s
+D a-except.ads		20151016123252 291912d5 ada.exceptions%s
+D a-ioexce.ads		20140225151544 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20141120112812 119b8fb3 ada.streams%s
+D a-tags.ads		20151016130316 01f5e3ef ada.tags%s
+D a-textio.ads		20140717063745 386df5d4 ada.text_io%s
+D a-unccon.ads		20170106103348 31484697 ada.unchecked_conversion%s
+D interfac.ads		20160502101001 5ab55268 interfaces%s
+D i-cstrea.ads		20140801100435 e53d8b8e interfaces.c_streams%s
+D name_tester.adb	20220310211803 38432d87 name_tester%b
+D system.ads		20170510173650 4635ec04 system%s
+D s-assert.ads		20140225151544 cd8d2c94 system.assertions%s
+D s-conca5.ads		20140225151544 875e432e system.concat_5%s
+D s-conca6.ads		20140225151544 d2c72db2 system.concat_6%s
+D s-crtl.ads		20141120112812 0ebbdb71 system.crtl%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-ficobl.ads		20140718105747 078245e4 system.file_control_block%s
+D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
+D s-secsta.ads		20170112134946 9751b57e system.secondary_stack%s
+D s-soflin.ads		20151020124036 14e1eb6c system.soft_links%s
+D s-stache.ads		20140225151139 a37c21ec system.stack_checking%s
+D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
+D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
+D s-traent.ads		20140730135025 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20140718092328 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 10|6r6 6r23
+X 6 a-textio.ads
+49K13*Text_IO 471e16 10|6w10 6r27
+166U14*New_Line 10|168s16 183s3 194s29
+240U14*Get 10|148s5 151s5 154s5
+242U14*Put 10|89s5 90s5 91s5 147s5 150s5 153s5 182s3 194s3
+263U14*Put_Line 10|186s3
+X 10 name_tester.adb
+8U11*name_tester 8b11 196l5 196t16
+10i3 NAME_SIZE{integer} 14r26 15r27 16r26 145r24
+12R8 Name 17e13 19r11 30r33 44r34 54r35 64r33 75r37 86r31 100r39 111r40 122r38
+. 133r31 144r39
+14a5 MyFirst{string} 33m13 46r20 77r20 89r17 102m13 135r44 149m13
+15a5 MyMiddle{string} 34m13 56r20 77r44 90r17 113m13 135r69 152m13
+16a5 myLast{string} 35m13 66r20 77r69 91r17 124m13 135r20 155m13
+19r3 aName{12R8} 158m8 160r27 161r28 162r26 163r30 168r8 171m12 171r12 172m13
+. 172r13 173m11 173r11 175r27 176r28 177r26 181r22 182r12 188m13 188r13 190r27
+. 191r28 192r26
+30U13 Init 30b13 30<19 30>39 30>46 30>54 36l7 36t11 158s3
+30r19 TheName{12R8} 33m5 34m5 35m5
+30a39 First{string} 33r24
+30a46 Middle{string} 34r25
+30a54 Last{string} 35r23
+44V12 getFirst{string} 44b12 44>21 47l7 47t15 160s18 175s18 190s18
+44r21 TheName{12R8} 46r12
+54V12 getMiddle{string} 54b12 54>22 57l7 57t16 161s18 176s18 191s18
+54r22 TheName{12R8} 56r12
+64V12 getLast{string} 64b12 64>20 67l7 67t14 162s18 177s18 192s18
+64r20 TheName{12R8} 66r12
+75V12 getFullName{string} 75b12 75>24 78l8 78t19 163s18
+75r24 TheName{12R8} 77r12 77r36 77r61
+86U13 Put 86b13 86>18 92l7 92t10 168s4
+86r18 TheName{12R8} 89r9 90r9 91r9
+100U13 setFirst 100b13 100=22 100>45 103l7 103t15 171s3
+100r22 TheName{12R8} 102m5
+100a45 aFirst{string} 102r24
+111U13 setMiddle 111b13 111=23 111>46 114l7 114t16 172s3
+111r23 TheName{12R8} 113m5
+111a46 aMiddle{string} 113r25
+122U13 setLast 122b13 122=21 122>44 125l7 125t14 173s3
+122r21 TheName{12R8} 124m5
+122a44 aLast{string} 124r23
+133V12 lfmi{string} 133b12 133>18 136l7 136t11 181s17 182s7
+133r18 TheName{12R8} 135r12 135r36 135r61
+144U13 readName 144b13 144=22 156l7 156t15 188s3
+144r22 TheName{12R8} 149m5 152m5 155m5
+145a5 input{string} 148m9 149r24 151m9 152r25 154m9 155r23
+

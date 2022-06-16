@@ -1,0 +1,63 @@
+Script started on 2022-02-01 20:47:29-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="97" LINES="24"]
+]0;hh35@remotel3: ~/cs214/project/project03/clojure/src[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ cat letter_grades.clj
+;;;; driver for function letter_Grades
+
+;;;; gets grades and decide letter grades for it
+;;;; output the letter grade from the input
+
+;;;; Haim Hong
+;;;; Jan 27 2022
+;;;;;;;;;;;;;;;;
+(ns letter_grades)
+
+(defn letterGrades [grade]
+  (cond
+    (= (quot grade 10) 10) "A" ;;;; after diving and it equals to the number then it outputs the right letter grade for it
+    (= (quot grade 10) 9) "A"
+    (= (quot grade 10) 8) "B"
+    (= (quot grade 10) 7) "C"
+    (= (quot grade 10) 6) "D"
+    :else       "F"))  ;;;; when nothing matches then F
+
+(defn -main []
+  (print "\nEnter your grade: ") (flush)
+  (let
+   [grade (read)]                ; read grade
+    
+    (println (letterGrades grade) "\n")      ; display its code
+    )
+)
+
+]0;hh35@remotel3: ~/cs214/project/project03/clojure/src[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ clojure -m   cp . - -,m  m lettergrade     _grades
+
+Enter your grade: 100
+A 
+
+]0;hh35@remotel3: ~/cs214/project/project03/clojure/src[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ clojure -cp . -m letter_grades
+
+Enter your grade: 976 
+A 
+
+]0;hh35@remotel3: ~/cs214/project/project03/clojure/src[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ clojure -cp . -m letter_grades
+
+Enter your grade: 86
+B 
+
+]0;hh35@remotel3: ~/cs214/project/project03/clojure/src[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ clojure -cp . -m letter_grades
+
+Enter your grade: 74
+C 
+
+]0;hh35@remotel3: ~/cs214/project/project03/clojure/src[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ clojure -cp . -m letter_grades
+
+Enter your grade: 62
+D 
+
+]0;hh35@remotel3: ~/cs214/project/project03/clojure/src[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ clojure -cp . -m letter_grades
+
+Enter your grade: 58
+F 
+
+]0;hh35@remotel3: ~/cs214/project/project03/clojure/src[01;32mhh35@remotel3[00m:[01;34m~/cs214/project/project03/clojure/src[00m$ exit
+
+Script done on 2022-02-01 20:48:24-05:00 [COMMAND_EXIT_CODE="0"]

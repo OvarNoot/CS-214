@@ -1,0 +1,45 @@
+Script started on 2022-02-04 14:58:57-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="156" LINES="24"]
+]0;hh35@gold17: ~/cs214/project/project04/clojure/src[01;32mhh35@gold17[00m:[01;34m~/cs214/project/project04/clojure/src[00m$ cat n_factorial.clj
+;;;; outputs the factorian of n from user input
+;;;;
+;;;; Haim Hong
+;;;; Date: Feb 4 2022
+;;;;
+;;;;
+(ns n_factorial)
+
+ (defn factorial [stop start answer]
+   (if (> start stop) ;; if start is lower then 
+     (do ;; do the funciton and recall function by recur
+       (printf "The factorial of %s is %s" stop answer))) ;;; when it reached stop then prints out the result
+
+   (if (<= start stop) ;; if not reached the stop yet
+     (do
+       (recur stop (+ start 1) (* answer start))))) ;;; recur by incrementing start by 1 and multiplying answer by start
+
+(defn -main []
+  (println "Enter the number to compute its factorial")
+  (let
+   [n (int (read))] ;; gets inputs for start stop increment)
+    (factorial n 2 1) ;; calling functions for it to output the result
+    (println)
+    )
+  )]0;hh35@gold17: ~/cs214/project/project04/clojure/src[01;32mhh35@gold17[00m:[01;34m~/cs214/project/project04/clojure/src[00m$ clojure -cp . 0 -m n_factorial
+Enter the number to compute its factorial
+5 3
+The factorial of 3 is 6
+]0;hh35@gold17: ~/cs214/project/project04/clojure/src[01;32mhh35@gold17[00m:[01;34m~/cs214/project/project04/clojure/src[00m$ clojure -cp . -m n_factorial
+Enter the number to compute its factorial
+5
+The factorial of 5 is 120
+]0;hh35@gold17: ~/cs214/project/project04/clojure/src[01;32mhh35@gold17[00m:[01;34m~/cs214/project/project04/clojure/src[00m$ clojure -cp . -m n_factorial
+Enter the number to compute its factorial
+8
+The factorial of 8 is 40320
+]0;hh35@gold17: ~/cs214/project/project04/clojure/src[01;32mhh35@gold17[00m:[01;34m~/cs214/project/project04/clojure/src[00m$ clojure -cp . -m n_factorial
+Enter the number to compute its factorial
+10
+The factorial of 10 is 3628800
+]0;hh35@gold17: ~/cs214/project/project04/clojure/src[01;32mhh35@gold17[00m:[01;34m~/cs214/project/project04/clojure/src[00m$ exit
+
+Script done on 2022-02-04 14:59:50-05:00 [COMMAND_EXIT_CODE="0"]

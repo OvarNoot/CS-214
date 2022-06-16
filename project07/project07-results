@@ -1,0 +1,398 @@
+Script started on 2022-02-25 13:41:40-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="144" LINES="24"]
+]0;hh35@gold27: ~/cs214/project/project07[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07[00m$ [K]0;hh35@gold27: ~/cs214/project/project07[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07[00m$ cat Array_p Processing.java
+/*
+    display values in an array on the screen
+    given array, fills it wiht values from keyboard
+    
+    Haim Hong
+    Feb 24
+*/
+
+import java.io.*;
+import java.util.Scanner;
+
+public class Array_Processing
+{
+    public static void main (String[] args){
+        Scanner keyboard = new Scanner(System.in);
+
+
+        System.out.println("Enter the size of array");
+        int a = keyboard.nextInt(); // get the size
+        double array[] = new double[a]; // makes empty array with size from user input
+        readArray(array, a); // calls functions
+
+        printArray(array, a);
+    }
+    /*
+    printArray
+    Gets array and the size
+    outputs the arrays in seperate lines
+    */
+    public static void printArray(double[] array, int size){
+        System.out.println("\nPrinting Arrays");
+        for (int i=0; i < size; i++){ // loops
+            System.out.println(array[i]); // prints out the array in i part
+        }
+    }
+    /*
+    readArray
+    Gets array and size
+    gets the input from user until the end of the loop
+    */
+    public static void readArray(double[] array, int size){
+        Scanner keyboard = new Scanner(System.in);
+        for (int i = 0; i < size; i++){ // loops until its the end of the size
+            System.out.println("Enter the value for array: ");
+            array[i] = keyboard.nextDouble(); // puts the input into array
+        }
+    }
+}]0;hh35@gold27: ~/cs214/project/project07[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07[00m$ javac - -deprecation Array_Procc essing.java
+]0;hh35@gold27: ~/cs214/project/project07[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07[00m$ java Array_Processing. 
+Enter the size of array
+5
+Enter the value for array: 
+1
+Enter the value for array: 
+2
+Enter the value for array: 
+3
+Enter the value for array: 
+4
+Enter the value for array: 
+5
+
+Printing Arrays
+1.0
+2.0
+3.0
+4.0
+5.0
+]0;hh35@gold27: ~/cs214/project/project07[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07[00m$ java Array_Processing
+Enter the size of array
+3
+Enter the value for array: 
+62
+Enter the value for array: 
+64  92
+Enter the value for array: 
+15
+
+Printing Arrays
+62.0
+92.0
+15.0
+]0;hh35@gold27: ~/cs214/project/project07[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07[00m$ exit
+
+Script done on 2022-02-25 13:44:20-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-25 13:48:14-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="144" LINES="23"]
+]0;hh35@gold27: ~/cs214/project/project07/clojure[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07/clojure[00m$ cat src  /array_processing.clj
+;;;
+;;; Gets the size of the array 
+;;; Gets values of array in readArry funciton
+;;; prints out the values that contained in array
+;;;
+;;; Haim Hong
+;;; Feb 24
+;;;;;;;;;;;;;;;;;;
+
+
+
+(ns array_processing)
+
+;; Reads values from user
+;; Stores the values into the array
+;; Gives out the array for it to be stored to other array
+(defn readArray [aVec size]
+  (if (vector? aVec) ;;; check if its vector
+    (if (> size 0) ;; check if size is valid for it to recur
+      (do 
+        (println "Enter your value: ") ;; outputs string
+        (recur (conj aVec (read)) (- size 1)) ;; recur appending values into array
+        )
+      aVec
+    )
+  )
+)
+;; prints out the values from array that is stored
+;; gets the filled array
+;; outputs the values
+(defn printArray [aVec]
+  (println "\nPrinting Arrays")
+  (doseq [a aVec] (println a) ) ;; prints out value of array in seperate line
+  )
+
+
+(defn -main []
+  (println "Enter the size: ")
+  (let 
+   [size (Integer/parseInt (read-line))
+    emptyVec []
+    printa (readArray emptyVec size) ;; gets the result into printa of reading arrays
+    printarray (printArray printa)]) ;; calls printarray to print it out
+  )]0;hh35@gold27: ~/cs214/project/project07/clojure[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07/clojure[00m$ d clojure -m array_processing
+Enter the size: 
+4
+Enter your value: 
+1
+Enter your value: 
+2
+Enter your value: 
+3
+Enter your value: 
+4
+
+Printing Arrays
+1
+2
+3
+4
+]0;hh35@gold27: ~/cs214/project/project07/clojure[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07/clojure[00m$ clojure -m array_processing
+Enter the size: 
+6
+Enter your value: 
+11
+Enter your value: 
+22
+Enter your value: 
+33
+Enter your value: 
+44
+Enter your value: 
+55
+Enter your value: 
+66
+
+Printing Arrays
+11
+22
+33
+44
+55
+66
+]0;hh35@gold27: ~/cs214/project/project07/clojure[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07/clojure[00m$ clojure -m array_processing
+Enter the size: 
+2
+Enter your value: 
+3
+Enter your value: 
+1
+
+Printing Arrays
+3
+1
+]0;hh35@gold27: ~/cs214/project/project07/clojure[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07/clojure[00m$ exit
+
+Script done on 2022-02-25 13:48:44-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-25 13:44:30-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="144" LINES="23"]
+]0;hh35@gold27: ~/cs214/project/project07[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07[00m$ cat array_processing.adb
+--
+--
+-- Gets the size of the array, Gets the values from user for it to be put into array
+-- Outputs the values from the array in seperate lines
+--
+-- Haim Hong
+-- Feb 24
+--
+-------------------------------------
+
+
+with Ada.Text_IO; use Ada.Text_IO;             
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+
+procedure array_processing is
+
+type Vector is array (Integer range <>) of Float;
+
+input : FLoat := 0.0;
+
+    -- creates one dimensional empty array in order to return it
+    -- just outputs the empty array
+    function Create_Vector return vector is 
+        size : Integer;
+    begin
+        Put("Enter size: ");
+        Get(size); -- gets size
+        declare
+            anArray : Vector(1..size) := (others => 0.0); -- creats empty array that is ranged with 1 to size
+        begin  
+            return anArray; -- returns its empty array with custom size
+        end;
+    end Create_Vector;
+
+    -- reads array from user and save it into array
+    -- gets empty array and fills it wiht user intput
+    -- gives out the filled array
+    procedure readArray (aVec: in out Vector) is
+    begin
+        for Y in aVec'Range (1) -- loops until the end of array
+        loop
+            Put("Enter value for array: ");
+            Get(input); -- gets input and puts it into the array
+            aVec(Y) := input;
+        end loop;
+    end readArray;
+
+    -- gets the array
+    -- prints out the values stores in arrays in seperate lines
+    procedure printArray (aVec: Vector) is
+    begin
+        Put_Line("Printing Arrays");
+        for Y in aVec'Range (1) -- loops until the end of array
+        loop
+            Put(aVec(Y)); -- prints out values
+            New_Line; -- for it to be on seperate lines
+        end loop;
+    end printArray;
+    
+    array0 : Vector := Create_Vector; -- creates empty array
+
+begin  
+    readArray (array0); -- calls functions to use them
+    printArray (array0);
+    
+end array_processing;]0;hh35@gold27: ~/cs214/project/project07[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07[00m$ gnatmake array_processing
+x86_64-linux-gnu-gcc-7 -c array_processing.adb
+x86_64-linux-gnu-gnatbind-7 -x array_processing.ali
+x86_64-linux-gnu-gnatlink-7 array_processing.ali
+]0;hh35@gold27: ~/cs214/project/project07[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07[00m$ gnatmake array_processing
+gnatmake: "array_processing" up to date.
+]0;hh35@gold27: ~/cs214/project/project07[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07[00m$ / ./array_processing
+Enter size: 5 5
+Enter value for array: 1
+Enter value for array: 2
+Enter value for array: 3
+Enter value for array: 4
+Enter value for array: 5
+Printing Arrays
+ 1.00000E+00
+ 2.00000E+00
+ 3.00000E+00
+ 4.00000E+00
+ 5.00000E+00
+]0;hh35@gold27: ~/cs214/project/project07[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07[00m$ ./array_processing
+Enter size: 7 4 3
+Enter value for array: 91
+Enter value for array: 52
+Enter value for array: 73
+Printing Arrays
+ 9.10000E+01
+ 5.20000E+01
+ 7.30000E+01
+]0;hh35@gold27: ~/cs214/project/project07[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07[00m$ ./array_processing
+Enter size: 7
+Enter value for array: 22  11
+Enter value for array: 22
+Enter value for array: 33
+Enter value for array: 44
+Enter value for array: 55
+Enter value for array: 66
+Enter value for array: 77
+Printing Arrays
+ 1.10000E+01
+ 2.20000E+01
+ 3.30000E+01
+ 4.40000E+01
+ 5.50000E+01
+ 6.60000E+01
+ 7.70000E+01
+]0;hh35@gold27: ~/cs214/project/project07[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07[00m$ exit
+
+Script done on 2022-02-25 13:45:48-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-25 13:50:22-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="144" LINES="23"]
+]0;hh35@gold27: ~/cs214/project/project07[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07[00m$ cat ru  array_processi   ssing.rb
+#
+# Gets input from user of its size and values for array in functions
+# outputs the value that's in the array
+#
+# Haim Hong
+# Feb 24
+###########3##
+
+# it pritns arrays
+def printArray array
+    print "\nPrinting Arrays"
+    for i in array do # goes through loop to print each value of arrays
+        puts i.to_s # in each seperate lines
+    end
+end
+
+# gets empty array, size
+# reads value from user
+# stores value into the array
+def readArray array, size
+    for i in 1..size do # loops until it eaches the size
+        puts "Enter the value for array: "
+        array[i] = gets.to_i # stores the user input to the array
+    end
+end
+
+if __FILE__ == $0
+    puts "Enter the size of array: "
+    size = gets.to_i # gets the user input
+    array = Array.new(size) #set the size of new array with user input
+
+    readArray(array, size) # calls read array
+    
+    printArray(array) # calls print array 
+end]0;hh35@gold27: ~/cs214/project/project07[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07[00m$ ruby array_probe  cessing.rb
+Enter the size of array: 
+4
+Enter the value for array: 
+1
+Enter the value for array: 
+2
+Enter the value for array: 
+3
+Enter the value for array: 
+4
+
+Printing Arrays
+1
+2
+3
+4
+]0;hh35@gold27: ~/cs214/project/project07[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07[00m$ ruby array_processing.rb
+Enter the size of array: 
+6
+Enter the value for array: 
+11
+Enter the value for array: 
+22
+Enter the value for array: 
+33
+Enter the value for array: 
+44
+Enter the value for array: 
+55
+Enter the value for array: 
+66
+
+Printing Arrays
+11
+22
+33
+44
+55
+66
+]0;hh35@gold27: ~/cs214/project/project07[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07[00m$ ruby array_processing.rb
+Enter the size of array: 
+4
+Enter the value for array: 
+41
+Enter the value for array: 
+32
+Enter the value for array: 
+63
+Enter the value for array: 
+35
+
+Printing Arrays
+41
+32
+63
+35
+]0;hh35@gold27: ~/cs214/project/project07[01;32mhh35@gold27[00m:[01;34m~/cs214/project/project07[00m$ exit
+
+Script done on 2022-02-25 13:50:53-05:00 [COMMAND_EXIT_CODE="0"]

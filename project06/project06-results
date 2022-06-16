@@ -1,0 +1,308 @@
+Script started on 2022-02-17 17:04:39-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="190" LINES="24"]
+]0;hh35@gold18: ~/cs214/project/project06[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06[00m$ cat Quadratic.java
+/*
+    y = ax^2 + bx + c
+    gets input of a,b, and c to compute roots of quadratic qeuations
+
+    Haim Hong
+    Feb  16
+*/
+import java.util.Scanner;
+import java.lang.Math;
+
+public class Quadratic
+{
+    public static void main(String[] args){
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("\nTo compute the roots of quadratice equation, enter a: ");
+        Double a = keyboard.nextDouble(); // gets all the iupts for a b c to compute quadratic 
+
+        System.out.println("\nEnter the b");
+        Double b = keyboard.nextDouble();
+        System.out.println("\nEnter the c");
+        Double c = keyboard.nextDouble();
+        String [] resultRoot = new String[2]; // creates new array
+        if (quadratic(a, b, c, resultRoot)) // output only if it returns true to make sure it works
+            System.out.println("\nThe root1 is " + resultRoot[0] + " and the root2 is " + resultRoot[1]);
+    }
+    public static boolean quadratic(double a, double b, double c, String[] result){
+        if (a != 0) {
+            double arg = Math.pow(b, 2.0) - 4 * a * c; // makes arg so will not have to write more for results
+            if (arg >= 0) {
+                result[0] = String.valueOf((-b + Math.sqrt(arg))/(2*a)); // computes the quadratic 
+                result[1] = String.valueOf((-b - Math.sqrt(arg))/(2*a));
+                return true;
+            } else {
+                System.out.println("\n*** quadraticRoots(): b^2 - 4ac is negative!"); // if arg is below 0 than print this out
+                result = new String[2]; // reset array by making it new
+                return false; // return false for it not to output anything
+            }
+
+        } else {
+            System.out.println("\n*** QuadraticRoots(): a is zero!"); //if a is 0 then output this
+            result = new String[2]; // reset array by making it new
+            return false; // return false for it not to output anything
+        }
+    }
+}]0;hh35@gold18: ~/cs214/project/project06[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06[00m$ javac -deprecation Quadratic.java
+]0;hh35@gold18: ~/cs214/project/project06[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06[00m$ java Quadratic
+
+To compute the roots of quadratice equation, enter a: 
+1
+
+Enter the b
+4
+
+Enter the c
+3
+
+The root1 is -1.0 and the root2 is -3.0
+]0;hh35@gold18: ~/cs214/project/project06[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06[00m$ java Quadratic
+
+To compute the roots of quadratice equation, enter a: 
+0
+
+Enter the b
+0
+
+Enter the c
+0
+
+*** QuadraticRoots(): a is zero!
+]0;hh35@gold18: ~/cs214/project/project06[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06[00m$ java Quadratic
+
+To compute the roots of quadratice equation, enter a: 
+1
+
+Enter the b
+1
+
+Enter the c
+1
+
+*** quadraticRoots(): b^2 - 4ac is negative!
+]0;hh35@gold18: ~/cs214/project/project06[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06[00m$ exit
+
+Script done on 2022-02-17 17:05:15-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-17 17:05:20-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="190" LINES="24"]
+]0;hh35@gold18: ~/cs214/project/project06[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06[00m$ d cat quadratic.clj   adb
+--
+-- gets a b c 
+-- outputs the computed roots of quadratic equation
+--
+-- Haim Hong
+-- Feb 17
+--
+----------------------------------------------------
+
+with Ada.Text_IO, Ada.Integer_Text_IO, Ada.Strings.Fixed, Ada.Numerics.Elementary_Functions, Ada.Float_Text_IO;
+use  Ada.Text_IO, Ada.Integer_Text_IO, Ada.Strings.Fixed, Ada.Numerics.Elementary_Functions, Ada.Float_Text_IO;
+
+procedure quadratic is
+    a, b, c, Root1, Root2 : Float; -- declare variables
+
+    -- gets three inputs and out the two roots
+    procedure quadraticeq(a: in Float; b: in Float; c: in Float; roots1: out Float; roots2: out Float) is 
+        
+        args : Float;
+        begin
+            if a /= 0.0 then -- check if its not 0
+                args := (b** 2.0) - (4.0 * a * c); -- then compute args
+                if args >= 0.0 then -- if it aint 0
+                    roots1 := (-b + Sqrt(args))/(2.0 * a); -- compute the roots
+                    roots2 := (-b - Sqrt(args))/(2.0 * a);
+                else
+                    Put_Line ("*** quadraticRoots(): b^2 - 4ac is negative!"); -- if arg is negative outputs
+                    roots1 := 0.0; -- resets roots
+                    roots2 := 0.0;
+                end if;
+            else 
+                Put_Line ("*** QuadraticRoots(): a is zero!"); -- if is 0 than output this
+                roots1 := 0.0; -- resets roots
+                roots2 := 0.0;
+            end if;
+        end quadraticeq;
+
+begin
+    Put ("Type value of a: "); -- printing string and gets input from user
+    Get(a);
+    Put("Type value of b: ");
+    Get(b);
+    Put("Type value of c: ");
+    Get(c);
+    quadraticeq(a, b, c, Root1, Root2);
+
+    if (Root1 /= 0.0 and Root2 /= 0.0) then -- check if root1 and root2 is not 0
+        Put("The Root1 is "); -- outputing the restuls
+        Put(Root1);
+        PUt(", the Root2 is ");
+        Put(Root2);
+    end if;
+end quadratic;]0;hh35@gold18: ~/cs214/project/project06[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06[00m$ gnatmake quadratic
+x86_64-linux-gnu-gcc-7 -c quadratic.adb
+x86_64-linux-gnu-gnatbind-7 -x quadratic.ali
+x86_64-linux-gnu-gnatlink-7 quadratic.ali
+]0;hh35@gold18: ~/cs214/project/project06[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06[00m$ ./gqu   qud adratic
+Type value of a: 1
+Type value of b: 4
+Type value of c: 3
+The Root1 is -1.00000E+00, the Root2 is -3.00000E+00
+]0;hh35@gold18: ~/cs214/project/project06[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06[00m$ ./quadratic
+Type value of a: 0
+Type value of b: 0
+Type value of c: 0
+*** QuadraticRoots(): a is zero!
+]0;hh35@gold18: ~/cs214/project/project06[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06[00m$ ./quadratic
+Type value of a: 1
+Type value of b: 1
+Type value of c: 1
+*** quadraticRoots(): b^2 - 4ac is negative!
+]0;hh35@gold18: ~/cs214/project/project06[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06[00m$ exit
+
+Script done on 2022-02-17 17:06:38-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-17 17:12:49-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="80" LINES="24"]
+]0;hh35@gold18: ~/cs214/project/project06/clojure[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06/clojure[00m$ cat scr/quadratic.clj
+cat: scr/quadratic.clj: No such file or directory
+]0;hh35@gold18: ~/cs214/project/project06/clojure[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06/clojure[00m$ cat src/quadratic/ , .clj
+;;;
+;;; Gets a, b, and c
+;;; Outputs the roots of quadratic equation
+;;;
+;;; Haim Hong
+;;; Feb 17
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+(ns quadratic)
+;; computs roots of quadratic equation
+
+(defn quadratic_eq [a b c] ;; the function
+  (if (not= a 0) ;; check if a is not zero
+    (do ;; if passed do this
+      (let [args (- (Math/pow b 2) (* 4 c a))] ;; decalre varible for args to computer to be used for squareroot of it
+        (if (>= args 0)
+          (do ;; if passed than do these by computing roots and vectoring into one
+            (let [root1 (/ (- (+ (Math/sqrt args)) b) (* 2 a)) root2 (/ (- (- (Math/sqrt args)) b) (* 2 a))] ;;compute each roots and put into each variable
+              (vector root1 root2) ;; vector htem into one
+            )
+          )
+          (do ;; if arg is negative than output these and make roots 0
+            (let [root1 0 root2 0] ;; declare these roots 
+              (vector root1 root2) ;; make them into one
+              (println "*** quadraticRoots(): b^2 - 4ac is negative!"))))) ;; output that it is negative
+    )
+    (do (let [root1 0 root2 0] ;; decalre these roots
+          (vector root1 root2)  ;; make them into one
+          (println "*** QuadraticRoots(): a is zero!")) ;; if not passed output that is zero
+    )
+  )
+)
+
+;; (-b + Sqrt (args)) / (2.0 * a)
+(defn -main []
+  (println "Enter value of a: ") ;; output string
+  (let [a (read)] ;; gets user inputs
+    (println "Enter value of b: ")
+    (let [b (read)]
+      (println "Enter value of c:")
+      (let [c (read)
+            result (quadratic_eq a b c) ;; call funciton to put it into result
+            root1 (get result 0) ;; get root1 from result array 0
+            root2 (get result 1)] ;; get root2 from result array 1
+        (if (not= root1 nil) ;; if the array is not nill then 
+          (if (not= root2 nil)
+            (printf (str "\nThe first root is \"%s\" and" ;; output the result if is passed
+                         " the second root is \"%s\"\n\n") root1 root2)))
+      )
+    )
+  )
+)]0;hh35@gold18: ~/cs214/project/project06/clojure[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06/clojure[00m$ clojure -m quadratic
+Enter value of a: 
+1
+Enter value of b: 
+4
+Enter value of c:
+3
+
+The first root is "-1.0" and the second root is "-3.0"
+
+]0;hh35@gold18: ~/cs214/project/project06/clojure[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06/clojure[00m$ clojure -m quadratic
+Enter value of a: 
+1
+Enter value of b: 
+1
+Enter value of c:
+1
+*** quadraticRoots(): b^2 - 4ac is negative!
+]0;hh35@gold18: ~/cs214/project/project06/clojure[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06/clojure[00m$ clojure -m quadratic
+Enter value of a: 
+0
+Enter value of b: 
+0
+Enter value of c:
+0
+*** QuadraticRoots(): a is zero!
+]0;hh35@gold18: ~/cs214/project/project06/clojure[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06/clojure[00m$ exit
+
+Script done on 2022-02-17 17:13:39-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-17 17:12:04-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="80" LINES="24"]
+]0;hh35@gold18: ~/cs214/project/project06[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06[00m$ cat script.       quadratic.rb
+#
+# Gets three inptus for a, b, and c
+# Computs the quadratic equation and outputs them if they are non zero
+#
+# Haim Hong
+# Feb 17
+###################
+
+def quadratic a, b, c
+    if a != 0 
+        args = (b**2) - 4 * c * a # computes the args for it to be used in roots
+        if args >= 0
+            roots = [(-b + Math.sqrt(args))/(2 * a), (-b +- Math.sqrt(args))/(2 * a)] # put both into one array 
+        else
+            puts "quadraticRoots(): b^2 - 4ac is negative!" # if its negative output this
+            roots = 0; # clear array
+        end
+    else
+        puts "*** QuadraticRoots(): a is zero!" # if its zero
+        roots = 0; # clear array
+    end
+
+end
+
+if __FILE__ == $0
+    print "Enter the value of a:" # output strings 
+    the_a = gets.to_f # gets the input
+    print "Enter the value of b:"
+    the_b = gets.to_f
+    print "Enter the value of c:"
+    the_c = gets.to_f
+
+    the_roots = quadratic(the_a, the_b, the_c)
+    if (the_roots[0] != 0) # check if its not 0
+        puts "The root1 is: " << the_roots[0].to_s # output them by converting to string
+        puts "The root2 is: " << the_roots[1].to_s # output them by converting to string
+    end
+end
+
+
+]0;hh35@gold18: ~/cs214/project/project06[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06[00m$ ruby quadratic.rb
+Enter the value of a:1
+Enter the value of b:4
+Enter the value of c:3
+The root1 is: -1.0
+The root2 is: -3.0
+]0;hh35@gold18: ~/cs214/project/project06[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06[00m$ ruby quadratic.rb
+Enter the value of a:1
+Enter the value of b:1
+Enter the value of c:1
+quadraticRoots(): b^2 - 4ac is negative!
+]0;hh35@gold18: ~/cs214/project/project06[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06[00m$ ruby quadratic.rb
+Enter the value of a:0
+Enter the value of b:0
+Enter the value of c:0
+*** QuadraticRoots(): a is zero!
+]0;hh35@gold18: ~/cs214/project/project06[01;32mhh35@gold18[00m:[01;34m~/cs214/project/project06[00m$ exit
+
+Script done on 2022-02-17 17:12:36-05:00 [COMMAND_EXIT_CODE="0"]
