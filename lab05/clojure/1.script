@@ -1,0 +1,17 @@
+Script started on 2022-02-10 11:52:48-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="26"]
+]0;hh35@gold17: ~/cs214/lab/lab05/clojure[01;32mhh35@gold17[00m:[01;34m~/cs214/lab/lab05/clojure[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> (fn [Para    x][x] )user=> (fn [x] ) ( + x x      + x x)(+ x x)))user=> (fn [x] (+ x x))user=> [K(fn [x] (+ x x))
+[K#object[user$eval136$fn__137 0x29182679 "user$eval136$fn__137@29182679"]
+user=> [Kuser=> [Kuser=> ((fn [x][x] )(fn [x] ) (  + +   x x)(+ x x))user=> ((fn [x] (+ x x)) 21)user=> ((fn [x] (+ x x)) 21)user=> [K((fn [x] (+ x x)) 21)
+42
+user=> [Kuser=> [Kuser=> ((fen  n [ x y][ x y] (+ (*x  x x)(* x x) (  * yy  y)(* y y))(+ (* x x) (* y y)))user=> ((fn [ x y] (+ (* x x) (* y y))) 3 4)user=> ((fn [ x y] (+ (* x x) (* y y))) 3 4)user=> [K((fn [ x y] (+ (* x x) (* y y))) 3 4)
+25
+user=> [Kuser=> [Kuser=> (* fn [ x y][ x y] (+ (* x x)(* x x) (  * y y)(* y y))(+ (* x x) (* y y)))user=> (fn [ x y] (+ (* x x) (* y y)))user=> [K(fn [ x y] (+ (* x x) (* y y)))
+#object[user$eval148$fn__149 0x60921b21 "user$eval148$fn__149@60921b21"]
+user=> [Kuser=> [Kuser=> (fn [ x y] (+ (* x x) (* y y)))user=> ([6@(fn [ x y] (+ (* x x) (* y y))) 3 4)user=> [K((fn [ x y] (+ (* x x) (* y y))) 3 4)
+25
+user=> [Kuser=> [Kuser=> 
+[K]0;hh35@gold17: ~/cs214/lab/lab05/clojure[01;32mhh35@gold17[00m:[01;34m~/cs214/lab/lab05/clojure[00m$ exit
+
+Script done on 2022-02-10 11:55:49-05:00 [COMMAND_EXIT_CODE="0"]

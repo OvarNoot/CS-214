@@ -1,0 +1,37 @@
+Script started on 2022-02-10 12:13:51-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="80" LINES="24"]
+]0;hh35@gold18: ~/cs214/lab/lab05/clojure[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab05/clojure[00m$ clojure       c;pk   lojue
+
+Command 'clojue' not found, did you mean:
+
+  command 'clojure' from deb clojure (1.10.1-1)
+
+Try: apt install <deb name>
+
+]0;hh35@gold18: ~/cs214/lab/lab05/clojure[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab05/clojure[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> (def triple (fn [x][x] (* x 3)(* x 3))(fn [x] (* x 3)))user=> (def triple (fn [x] (* x 3)))user=> [K(def triple (fn [x] (* x 3)))
+[K#'user/triple
+user=> [Kuser=> [Kuser=> (triple 4)user=> (triple 4)user=> [K(triple 4)
+12
+user=> [Kuser=> [Kuser=> (defn triple [x][x] (* x 3)(* x 3))user=> (defn triple [x] (* x 3))user=> [K(defn triple [x] (* x 3))
+#'user/triple
+user=> [Kuser=> [Kuser=> (# (* % 3)(* % 3) 4)user=> (# (* % 3) 4)user=> [K(# (* % 3) 4)
+Syntax error reading source at (REPL:4:11).
+Reader tag must be a symbol
+4
+Syntax error reading source at (REPL:4:14).
+Unmatched delimiter: )
+user=> [Kuser=> [Kuser=> (#(* % 3)(* % 3) 4)user=> (#(* % 3) 4)user=> [K(#(* % 3) 4)
+12
+user=> [Kuser=> [Kuser=> #( + (* %1 %1)(* %1 %1) (*5  %2 %2)(* %2 %2))user=> #( + (* %1 %1) (* %2 %2))user=> [K#( + (* %1 %1) (* %2 %2))
+#object[user$eval150$fn__151 0x4b1abd11 "user$eval150$fn__151@4b1abd11"]
+user=> [Kuser=> [Kuser=> (#  (+ (* %1 %1)(* %1 %1) (* %2 %2)(* %2 %2))user=> (#(+ (* %1 %1) (* %2 %2)) 3 4)user=> (#(+ (* %1 %1) (* %2 %2)) 3 4)user=> [K(#(+ (* %1 %1) (* %2 %2)) 3 4)
+25
+user=> [Kuser=> [Kuser=> (def sum25squares #(+ (* %1 %1)(* %1 %1) (* %2 %2)(* %2 %2))(+ (* %1 %1) (* %2 %2)))user=> (def sum25squares #(+ (* %1 %1) (* %2 %2)))user=> [K(def sum25squares #(+ (* %1 %1) (* %2 %2)))
+#'user/sum25squares
+user=> [Kuser=> [Kuser=> (sum25squars es 3 4)user=> (sum25squares 3 4)user=> [K(sum25squares 3 4)
+25
+user=> [Kuser=> [Kuser=> 
+[K]0;hh35@gold18: ~/cs214/lab/lab05/clojure[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab05/clojure[00m$ exit
+
+Script done on 2022-02-10 12:19:14-05:00 [COMMAND_EXIT_CODE="0"]

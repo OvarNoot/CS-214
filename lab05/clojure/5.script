@@ -1,0 +1,33 @@
+Script started on 2022-02-10 13:05:08-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="80" LINES="24"]
+]0;hh35@gold18: ~/cs214/lab/lab05/clojure[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab05/clojure[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> (defn incMaker(  [incValue][incValue] #(+ % incValue)(+ % incValue))user=> (defn incMaker [incValue] #(+ % incValue))user=> [K(defn incMaker [incValue] #(+ % incValue))
+[K#'user/incMaker
+user=> [Kuser=> [Kuser=> (def inc6 5 (incMka  aker 5)(incMaker 5))user=> (def inc5 (incMaker 5))user=> [K(def inc5 (incMaker 5))
+#'user/inc5
+user=> [Kuser=> [Kuser=> (inc5 1)(inc5 1)[K(inc5 1)
+6
+user=> [Kuser=> [Kuser=> (inc5 7)(inc5 7)[K(inc5 7)
+12
+user=> [Kuser=> [Kuser=> (defn fg  greetingBuilder [greeting][greeting] (fn [visitor][visitor] (str greeting ", " visitor  "!")[A> (defn greetingBuilder [greeting] (fn [visitor] 
+ "!"))[A (defn greetingBuilder [greeting] 
+ "!")))[A
+ "!")))[A[K
+[K[Auser=> (defn greetingBuilder [greeting] (fn [visitor] (str greeting ", " visitor "!")))
+#'user/greetingBuilder
+user=> [Kuser=> [Kuser=> (def cG sGreeting (greetingBuilder "Welcome to CS 2144")user=> (def csGreeting (greetingBuilder "Welcome to CS 214"))user=> (def csGreeting (greetingBuilder "Welcome to CS 214"))user=> [K(def csGreeting (greetingBuilder "Welcome to CS 214"))
+#'user/csGreeting
+user=> [Kuser=> [Kuser=> (DEF ENGLISHgRE              D Def   def englishGreeting (greetingBuilder "h Hello")(greetingBuilder "Hello"))user=> (def englishGreeting (greetingBuilder "Hello"))user=> [K(def englishGreeting (greetingBuilder "Hello"))
+#'user/englishGreeting
+user=> [Kuser=> [Kuser=> (def frenchGreeting (greetingBuilder "Bonjour")(greetingBuilder "Bonjour"))user=> (def frenchGreeting (greetingBuilder "Bonjour"))user=> [K(def frenchGreeting (greetingBuilder "Bonjour"))
+#'user/frenchGreeting
+user=> [Kuser=> [Kuser=> (csGreeting "ANn  NN  nn")user=> (csGreeting "Ann")user=> [K(csGreeting "Ann")
+"Welcome to CS 214, Ann!"
+user=> [Kuser=> [Kuser=> (englishGreeting "CHris    hris")user=> (englishGreeting "Chris")user=> [K(englishGreeting "Chris")
+"Hello, Chris!"
+user=> [Kuser=> [Kuser=> (frn enchGreeting "CHris    hris")user=> (frenchGreeting "Chris")user=> [K(frenchGreeting "Chris")
+"Bonjour, Chris!"
+user=> [Kuser=> [Kuser=> 
+[K]0;hh35@gold18: ~/cs214/lab/lab05/clojure[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab05/clojure[00m$ exit
+
+Script done on 2022-02-10 13:08:43-05:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,19 @@
+Script started on 2022-02-10 12:25:56-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="80" LINES="24"]
+]0;hh35@gold18: ~/cs214/lab/lab05/clojure[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab05/clojure[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> #(* (* % %)(* % %)(  (% * % %)(* % %))user=> #(* (* % %) (* % %))user=> [K#(* (* % %) (* % %))
+#object[user$eval3$fn__4 0x7668d560 "user$eval3$fn__4@7668d560"]
+user=> [Kuser=> [Kuser=> d (* def squareofsquare #(* (* % %)(* % %) (* % %)(* % %))(* (* % %) (* % %)))user=> (def squareofsquare #(* (* % %) (* % %)))user=> [K(def squareofsquare #(* (* % %) (* % %)))
+#'user/squareofsquare
+user=> [Kuser=> [Kuser=> (squareofsquare 3)user=> (squareofsquare 3)user=> [K(squareofsquare 3)
+81
+user=> [Kuser=> [Kuser=> (squareofsquare 3)[1P)\)[1P)-)2)user=> [K(squareofsquare -2)
+16
+user=> [Kuser=> [Kuser=> (squareofsquare -2)[1P)[1P)2)user=> [K(squareofsquare 2)
+16
+user=> [Kuser=> [Kuser=> (squareofsquare 2)2[1P)-)3)user=> [K(squareofsquare -3)
+81
+user=> [Kuser=> [Kuser=> 
+[K]0;hh35@gold18: ~/cs214/lab/lab05/clojure[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab05/clojure[00m$ exit
+
+Script done on 2022-02-10 12:26:58-05:00 [COMMAND_EXIT_CODE="0"]

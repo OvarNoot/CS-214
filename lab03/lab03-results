@@ -1,0 +1,346 @@
+Script started on 2022-01-27 15:11:47-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="95" LINES="24"]
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ cat YearCOD  Odes     o COde   odes.java
+/* YearCodes.java is a driver for function yearCode().
+ *
+ * Begun by: Prof. Adams, for CS 214 at Calvin College.
+ * Haim Hong
+ * Jan 27 2022
+ ****************************************************************/
+
+import java.util.Scanner;
+
+public class YearCodes {
+
+   public static void main(String[] args) {
+      Scanner keyboard = new Scanner(System.in);
+      System.out.println("\nEnter your academic year: "); // prompt
+
+      String year = keyboard.next();      // read year
+      System.out.println(yearCode(year)); // display its code
+   }
+
+   /***************************************************************
+    * yearCode() converts an academic year into its integer code.
+    *
+    * Receive: year, a string.
+    * PRE: year is one of {freshman, sophomore, junior, or senior}.
+    * Return: the integer code corresponding to year.
+    */
+
+   // REPLACE THIS LINE WITH THE DEFINITION OF yearCode()
+   public static int yearCode(String year){
+      if (year.equals("freshman")) // if input is equal to freshman
+         return 1;
+      else 
+         if (year.equals("sophomore")) // if input is equal to sophomore
+            return 2;
+         else 
+            if (year.equals("junior")) // if input is equal to junior
+               return 3;
+            else 
+               if (year.equals("senior")) // if input is equal to senior
+                  return 4;
+               else
+                  return 0;
+   }
+}
+/*
+   MethodDef       ::=   MethodHeading MethodBody
+   MethodHeading   ::=   Type identifier (ParameterDecs)
+   ParameterDecs   ::=   ParameterDec MoreParams | Ø
+   ParameterDec    ::=   Type identifier DefaultArg
+   DefaultArg      ::=   = Expression | Ø
+   MoreParams      ::=   , ParameterDec MoreParams | Ø
+   MethodBody      ::=   { StatementList }
+
+   IfStmt          ::=   if (Expression) Statement ElsePart
+   ElsePart        ::=   else Statement | Ø
+
+   Expression      ::=   BoolExpr
+   BoolExpr        ::=   RelationalExpr BoolCondition
+   BoolCondition   ::=   BoolOp RelationalExpr | Ø
+   BoolOp          ::=   && | || | !
+   RelationalExpr  ::=   Expression RelationalCond
+   RelationalCond  ::=   RelationalOp Expression | Ø
+   RelationalOp    ::=   == | != | < | > | <= | >=
+*/
+
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ javac -deprecation Ywe  earCodes.java
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ java YearCodes
+
+Enter your academic year: 
+freshman
+1
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ java YearCodes
+
+Enter your academic year: 
+sophomore
+2
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ java YearC Codes
+
+Enter your academic year: 
+junior
+3
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ java YearCOdes
+Error: Could not find or load main class YearCOdes
+Caused by: java.lang.ClassNotFoundException: YearCOdes
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ java YearCodes
+
+Enter your academic year: 
+senior
+4
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ java YearCodes
+
+Enter your academic year: 
+graduate
+0
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ exit
+
+Script done on 2022-01-27 15:13:18-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-01-27 15:13:32-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="95" LINES="24"]
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ cat year_codes.adb
+-- year_codes.adb converts academic year codes to corresponding years.
+--
+-- Begun by: Dr. Adams, for CS 214 at Calvin College.
+-- Haim Hong
+-- Jan 27 2022
+--
+-- Input: year, a string
+-- Precondition: year is one of "freshman", "sophomore", "junior", "senior"
+-- Output: The year code (1, 2, 3 or 4) corresponding to year.
+----------------------------------------------------
+
+with Ada.Text_IO, Ada.Integer_Text_IO;
+use  Ada.Text_IO, Ada.Integer_Text_IO;
+
+procedure year_codes is
+
+   year : String(1..9) := "         ";
+   charsRead : Natural;
+   
+   -- replace this comment with the definition of yearCode()
+   function yearCode(y: string) return integer is
+
+   begin
+      if y = "freshman " then
+         return 1;
+      elsif y = "sophomore" then
+         return 2;
+      elsif y = "junior   " then
+         return 3;
+      elsif y = "senior   " then
+         return 4;
+      else
+         return 0;
+      end if;
+   end yearCode;
+
+begin                                          
+   Put("Enter your academic year: ");           -- Prompt for input
+   Get_Line(year, charsRead);                   -- Input
+   Put( yearCode(year) );                       -- Convert and output
+   New_Line;
+end year_codes;
+
+--
+
+
+--]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ gnatmake year_codes.adb
+x86_64-linux-gnu-gcc-7 -c year_codes.adb
+x86_64-linux-gnu-gnatbind-7 -x year_codes.ali
+x86_64-linux-gnu-gnatlink-7 year_codes.ali
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ gnatmake year_codes.adb
+gnatmake: "year_codes" up to date.
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ ./year_codes
+Enter your academic year: freshman
+          1
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ ./y   ./year_codes
+Enter your academic year: sophomore
+          2
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ ./year_codes
+Enter your academic year: junior
+          3
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ ./year_codessenior      
+Enter your academic year: senior
+          4
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ ./year_codes
+Enter your academic year: graduate
+          0
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ exit
+
+Script done on 2022-01-27 15:14:31-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-01-27 15:20:50-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="123" LINES="24"]
+]0;hh35@gold18: ~/cs214/lab/lab03/clojure/src[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03/clojure/src[00m$ cat year_codes.clj
+;;;; year_codes.clj is a driver for function yearCode.
+;;;;
+;;;; Input: An academic year, one of {freshman, sophomore,
+;;;;                                  junior, senior}.
+;;;; Output: The code for that academic year
+;;;;         (1, 2, 3, 4 for valid entries; 
+;;;;          0 for invalid entries).
+;;;;
+;;;; Usage: clojure -m year_codes
+;;;;
+;;;; Begun by: Prof. Adams, for CS 214 at Calvin College.
+;;;; Completed by: Haim Hong
+;;;; Date: Jan 27 2022
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(ns year_codes)                    ; name the program
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; yearCode() returns the code for a given academic year.
+;;; Receive: year, a string.
+;;; Precondition: year is one of 
+;;;   {freshman, sophomore, junior or senior}.
+;;; Return: the integer code corresponding to year.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Replace this line with the definition of function yearCode().
+(defn yearCode [year]
+  (if (= year "freshman")
+    1
+    (if (= year "sophomore")
+    2
+      (if (= year "junior")
+        3
+        (if (= year "senior")
+          4
+          0))))
+  )
+
+(defn yearCode2 [year]
+  (cond
+    (= year "freshman")  1
+    (= year "sophomore") 2
+    (= year "junior")    3
+    (= year "senior")    4
+    :else                0))
+
+(defn yearCode3 [year]
+  (case year
+    "freshman"  1
+    "sophomore" 2
+    "junior"    3
+    "senior"    4
+    0 ; default
+    ))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Function -main() test-drives our yearCode() function.
+;;; Input: year: one of {freshman, sophomore, junior, or senior}.
+;;; Output: the code corresponding to year.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -main []
+  (print "\nEnter your academic year: ") (flush)
+  (let
+   [year (read-line)]                ; read year (a string)
+    (println (yearCode year) "\n")      ; display its code
+    (println (yearCode2 year) "\n")
+    (println (yearCode3 year) "\n")
+
+    ))
+
+]0;hh35@gold18: ~/cs214/lab/lab03/clojure/src[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03/clojure/src[00m$ clojure -m    -cp /   . -m cl  year_codes
+
+Enter your academic year: freshman
+1 
+
+1 
+
+1 
+
+]0;hh35@gold18: ~/cs214/lab/lab03/clojure/src[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03/clojure/src[00m$ clojure -cp . -m year_codes
+
+Enter your academic year: sophomore
+2 
+
+2 
+
+2 
+
+]0;hh35@gold18: ~/cs214/lab/lab03/clojure/src[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03/clojure/src[00m$ clojure -cp . -m year_codes
+
+Enter your academic year: junior
+3 
+
+3 
+
+3 
+
+]0;hh35@gold18: ~/cs214/lab/lab03/clojure/src[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03/clojure/src[00m$ clojure -cp . -m year_codes
+
+Enter your academic year: senior
+4 
+
+4 
+
+4 
+
+]0;hh35@gold18: ~/cs214/lab/lab03/clojure/src[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03/clojure/src[00m$ clojure -cp . -m year_codes
+
+Enter your academic year: graduate
+0 
+
+0 
+
+0 
+
+]0;hh35@gold18: ~/cs214/lab/lab03/clojure/src[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03/clojure/src[00m$ exit
+
+Script done on 2022-01-27 15:21:41-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-01-27 15:23:04-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="123" LINES="24"]
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ cat year_codes.rb
+#! /usr/bin/ruby
+# year_codes.rb translates an academic year into a numeric code
+# Begun by: Dr. Nelesen, for CS 214 at Calvin College 
+# Haim Hong
+# Jan 27 2022
+################################################################
+
+# Input:  The name of an academic year
+# Precondition: The academic year is a string with a value of freshman, 
+#   sophomore, junior or senior
+# Output: The corresponding integer code for the given academic year
+
+#  Replace this line with the definition of function yearCode() 
+def yearCode(y)
+   if y =~ /freshman/ then # for string comparison
+      return 1
+   elsif y =~ /sophomore/ then
+      return 2
+   elsif y =~ /junior/ then
+      return 3
+   elsif y =~ /senior/ then # when typed supersenior it gives still 4
+      return 4
+   else  
+      return 0
+   end
+end
+if __FILE__ == $0
+   print "Enter the year: "
+   year = gets
+   print "Numeric code is: "
+   puts yearCode(year)
+end
+
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ . ruby year_codes.rb
+Enter the year: freshman
+Numeric code is: 1
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ ruby year_codes.rb
+Enter the year: sophomore
+Numeric code is: 2
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ ruby year_codes.rb
+Enter the year: junior
+Numeric code is: 3
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ ruby year_codes.rb
+Enter the year: senior
+Numeric code is: 4
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ ruby year_codes.rb
+Enter the year: supersenior
+Numeric code is: 4
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ ruby year_codes.rb
+Enter the year: graduate
+Numeric code is: 0
+]0;hh35@gold18: ~/cs214/lab/lab03[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab03[00m$ exit
+
+Script done on 2022-01-27 15:23:43-05:00 [COMMAND_EXIT_CODE="0"]

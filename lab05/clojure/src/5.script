@@ -1,0 +1,47 @@
+Script started on 2022-02-10 12:58:44-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="80" LINES="24"]
+]0;hh35@gold18: ~/cs214/lab/lab05/clojure[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab05/clojure[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> (defn incMA aker [incValue][incValue] #( +  + x in  inc     % INCvA     In  IN  incValue)(+ % incValue))user=> (defn incMaker [incValue] #(+ % incValue))user=> [K(defn incMaker [incValue] #(+ % incValue))
+[K#'user/incMaker
+user=> [Kuser=> [Kuser=> (def inc5 (incMaker 5)(incMaker 5))user=> (def inc5 (incMaker 5))user=> [K(def inc5 (incMaker 5))
+#'user/inc5
+user=> [Kuser=> [Kuser=> (inc5 5)(inc5 5)[K(inc5 5)
+10
+user=> [Kuser=> [Kuser=> (inc5 6)(inc5 6)[K(inc5 6)
+11
+user=> [Kuser=> [Kuser=> (inc  t 1   5 1)(inc5 1)[K(inc5 1)
+6
+user=> [Kuser=> [Kuser=> (defn greetingBUilder [greeting][greeting] ( (fn [visitor][visitor] (str greeting ","  " visitor  "1 !")[A> (defn greetingBUilder [greeting] (fn [visitor] 
+ "!"))[A (defn greetingBUilder [greeting] 
+ "!")))[A
+ "!")))[A[K
+[K[Auser=> (defn greetingBUilder [greeting] (fn [visitor] (str greeting ", " visitor "!")))
+#'user/greetingBUilder
+user=> [Kuser=> [Kuser=> (def csGReeting (greetingBil  uilder "Welcome to CS 213 4")user=> (def csGReeting (greetingBuilder "Welcome to CS 214"))user=> (def csGReeting (greetingBuilder "Welcome to CS 214"))user=> [K(def csGReeting (greetingBuilder "Welcome to CS 214"))
+Syntax error compiling at (REPL:1:17).
+Unable to resolve symbol: greetingBuilder in this context
+user=> [Kuser=> [Kuser=> (def csGReeting (greetingBuilder "Welcome to CS 214"))[1P[1@Uilder "Welcome to CS 214"))user=> [K(def csGReeting (greetingBUilder "Welcome to CS 214"))
+#'user/csGReeting
+user=> [Kuser=> [Kuser=> (def c englishGreeting (greetingBUilder "Hello")(greetingBUilder "Hello"))user=> (def englishGreeting (greetingBUilder "Hello"))user=> [K(def englishGreeting (greetingBUilder "Hello"))
+#'user/englishGreeting
+user=> [Kuser=> [Kuser=> (def frenchGreeting (greetingBUIlder "Bonjour")(greetingBUIlder "Bonjour"))user=> (def frenchGreeting (greetingBUIlder "Bonjour"))user=> [K(def frenchGreeting (greetingBUIlder "Bonjour"))
+Syntax error compiling at (REPL:1:21).
+Unable to resolve symbol: greetingBUIlder in this context
+user=> [Kuser=> [Kuser=> (csGreeting "ANn  NN  nn")user=> (csGreeting "Ann")user=> [K(csGreeting "Ann")
+Syntax error compiling at (REPL:1:1).
+Unable to resolve symbol: csGreeting in this context
+user=> [Kuser=> [Kuser=> cs    (csGReeting "Ann")user=> (csGReeting "Ann")) user=> [K(csGReeting "Ann")
+"Welcome to CS 214, Ann!"
+user=> [Kuser=> [Kuser=> (englishGreeting ( "CHris    hris")user=> (englishGreeting "Chris")user=> [K(englishGreeting "Chris")
+"Hello, Chris!"
+user=> [Kuser=> [Kuser=> (frenchGreeting "Chris")user=> (frenchGreeting "Chris")user=> [K(frenchGreeting "Chris")
+Execution error (IllegalStateException) at user/eval155 (REPL:1).
+Attempting to call unbound fn: #'user/frenchGreeting
+user=> [Kuser=> [Kuser=> 89  (french       (def frenchGreeting (greetingBUilder :B  "bB  Bonjour")(greetingBUilder "Bonjour"))user=> (def frenchGreeting (greetingBUilder "Bonjour"))user=> [K(def frenchGreeting (greetingBUilder "Bonjour"))
+#'user/frenchGreeting
+user=> [Kuser=> [Kuser=> (frenchGRee   reeting "Chris")user=> (frenchGreeting "Chris")user=> [K(frenchGreeting "Chris")
+"Bonjour, Chris!"
+user=> [Kuser=> [Kuser=> 
+[K]0;hh35@gold18: ~/cs214/lab/lab05/clojure[01;32mhh35@gold18[00m:[01;34m~/cs214/lab/lab05/clojure[00m$ exit
+
+Script done on 2022-02-10 13:04:47-05:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,34 @@
+example1:
+some of the code thats shown goes wiht the input of start and some goes with stop input.
+If it doesnt match any of the input it will just echo it
+
+example2:
+When I typed 1234 it outputs NUMBER and when I typed just word or name John it outputs WORD
+If I include underscore as my input it adds the underscore before any of both output as _NUMBER or _WORD.
+or when I typed underscore between the words it outputed WORD _WORD as it gets the WORD and outputs the underscore and then WORD
+WHen only inputed underscore it just outputs underscore
+After putting it in the identifier it works as one of the other kinds for when added to WORD when added to both it will just output NUMBER for underscore
+
+example4:
+terminal: it is already prefdefined.
+non-terminal: they are symbols that has to be defined by you 
+
+WHen ran the program it doesn't really tell us as top above showed 
+heat on
+        Heater on!
+heat off
+        Heater off!
+set temperature 22
+        New temperature set!
+
+rather showed heat turned on or off and Temperature set
+heat on
+        Heater on!
+heat off
+        Heater off!
+set temperature 22
+        New temperature set!
+
+example5:
+Now it does tell it is turned on and off and it specifies which temperature it got set to
+

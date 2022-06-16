@@ -1,0 +1,149 @@
+Script started on 2022-02-03 22:08:28-05:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="80" LINES="24"]
+]0;hh35@remotel2: ~/cs214/lab/lab04/clojure/src[01;32mhh35@remotel2[00m:[01;34m~/cs214/lab/lab04/clojure/src[00m$ cat   logTable.clj
+;;;; logTable.clj displays a table of logarithms.
+;;;;
+;;;; Input: start, stop and increment, three numbers.
+;;;; Precondition: start < stop && increment > 0.
+;;;; Output: A table of logarithms from start to stop,
+;;;;          with interval of increment.
+;;;;
+;;;; Begun by: Prof. Adams, for CS 214 at Calvin College.
+;;;; Completed by: Haim Hong
+;;;; Date: Feb 3 2022
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(ns logTable)                                 ; name the program
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; displayLogTable() recursively generates the log-table.
+;;; Receive: start the first value for the table;
+;;;          stop, the last  value for the table;
+;;;           step, the step value for the table;
+;;; Precondition: start < stop && increment > 0.
+;;; Output: The table of logs from start to stop, by step.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; direct-recursive version
+
+; replace this line with the definition of displayLogTable().
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; -main is a 'driver' for the displayLogTable() functions.
+;;; Input: start, stop and increment.
+;;; Output: The table of logarithms 
+;;;          from start to stop by increment
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn displayLogTable [start stop increment]
+  (if (<= start stop) ;; if start is lower then 
+    (do ;; do the funciton and recall function by recur
+      (printf "\nThe logarithms of %s is %.15f" start (Math/log10 start)) ;; outputs the result Log of start
+       (recur (+ start increment) stop increment)) ;; increment start by increment while recur to do a recursion
+    )
+)
+
+(defn displayLogTable2 [start stop increment]
+  (loop [i start] ; make i replacement of start for loop
+    (when (<= i stop) ; when i is lower of equal to the loop
+    (printf "\nThe logarithms of %s is %.15f" i (Math/log10 i))
+    (recur (+ i increment)) ; incrementing i by increment while recalling function
+    ))
+  )
+
+(defn displayLogTable3 [start stop increment]
+    (if (<= start stop)                     ; if start <= stop:
+      (do                                      ; do these two things:
+        (printf "The logarithm of %f is %f\n"  ; - print one line
+                start (Math/log10 start))
+        (recur (+ start increment) stop increment)       ; - recurse, start+=step
+        ))
+  )
+
+(defn -main []
+ (println "To display a table of logarithms,")
+ (print " enter the start, stop, and increment values: ") (flush)
+ (let
+    [ start (double (read)) ;; gets inputs for start stop increment
+      stop (double (read))
+      increment (double (read))
+    ] 
+    (println) 
+    (displayLogTable start stop increment) ;; calling functions
+    (println)
+    (displayLogTable2 start stop increment) 
+    (println)
+    (displayLogTable3 start stop increment) 
+    (println)
+ )
+)
+
+]0;hh35@remotel2: ~/cs214/lab/lab04/clojure/src[01;32mhh35@remotel2[00m:[01;34m~/cs214/lab/lab04/clojure/src[00m$ cat logTable.cljlojure -cp . -m logTable
+To display a table of logarithms,
+ enter the start, stop, and increment values: 1
+10
+0.5
+
+
+The logarithms of 1.0 is 0.000000000000000
+The logarithms of 1.5 is 0.176091259055681
+The logarithms of 2.0 is 0.301029995663981
+The logarithms of 2.5 is 0.397940008672038
+The logarithms of 3.0 is 0.477121254719662
+The logarithms of 3.5 is 0.544068044350276
+The logarithms of 4.0 is 0.602059991327962
+The logarithms of 4.5 is 0.653212513775344
+The logarithms of 5.0 is 0.698970004336019
+The logarithms of 5.5 is 0.740362689494244
+The logarithms of 6.0 is 0.778151250383644
+The logarithms of 6.5 is 0.812913356642856
+The logarithms of 7.0 is 0.845098040014257
+The logarithms of 7.5 is 0.875061263391700
+The logarithms of 8.0 is 0.903089986991944
+The logarithms of 8.5 is 0.929418925714293
+The logarithms of 9.0 is 0.954242509439325
+The logarithms of 9.5 is 0.977723605288848
+The logarithms of 10.0 is 1.000000000000000
+
+The logarithms of 1.0 is 0.000000000000000
+The logarithms of 1.5 is 0.176091259055681
+The logarithms of 2.0 is 0.301029995663981
+The logarithms of 2.5 is 0.397940008672038
+The logarithms of 3.0 is 0.477121254719662
+The logarithms of 3.5 is 0.544068044350276
+The logarithms of 4.0 is 0.602059991327962
+The logarithms of 4.5 is 0.653212513775344
+The logarithms of 5.0 is 0.698970004336019
+The logarithms of 5.5 is 0.740362689494244
+The logarithms of 6.0 is 0.778151250383644
+The logarithms of 6.5 is 0.812913356642856
+The logarithms of 7.0 is 0.845098040014257
+The logarithms of 7.5 is 0.875061263391700
+The logarithms of 8.0 is 0.903089986991944
+The logarithms of 8.5 is 0.929418925714293
+The logarithms of 9.0 is 0.954242509439325
+The logarithms of 9.5 is 0.977723605288848
+The logarithms of 10.0 is 1.000000000000000
+The logarithm of 1.000000 is 0.000000
+The logarithm of 1.500000 is 0.176091
+The logarithm of 2.000000 is 0.301030
+The logarithm of 2.500000 is 0.397940
+The logarithm of 3.000000 is 0.477121
+The logarithm of 3.500000 is 0.544068
+The logarithm of 4.000000 is 0.602060
+The logarithm of 4.500000 is 0.653213
+The logarithm of 5.000000 is 0.698970
+The logarithm of 5.500000 is 0.740363
+The logarithm of 6.000000 is 0.778151
+The logarithm of 6.500000 is 0.812913
+The logarithm of 7.000000 is 0.845098
+The logarithm of 7.500000 is 0.875061
+The logarithm of 8.000000 is 0.903090
+The logarithm of 8.500000 is 0.929419
+The logarithm of 9.000000 is 0.954243
+The logarithm of 9.500000 is 0.977724
+The logarithm of 10.000000 is 1.000000
+
+]0;hh35@remotel2: ~/cs214/lab/lab04/clojure/src[01;32mhh35@remotel2[00m:[01;34m~/cs214/lab/lab04/clojure/src[00m$ exit
+
+Script done on 2022-02-03 22:08:45-05:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,16 @@
+Script started on 2022-02-10 12:05:20-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="26"]
+]0;hh35@gold17: ~/cs214/lab/lab05/clojure[01;32mhh35@gold17[00m:[01;34m~/cs214/lab/lab05/clojure[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> ((fn [ x y] (+ (* x x) (* y y))) 3 4)user=> [K(fn [x y z][x y z] (max (Math/abs x)(Math/abs x) (mA  Math/abs y)(Math/abs y) (Math/abs z)(Math/abs z))user=> (fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z)))user=> (fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))))user=> [K(fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z)))
+[K#object[user$eval136$fn__137 0x5b3f3ba0 "user$eval136$fn__137@5b3f3ba0"]
+user=> [Kuser=> [Kuser=> (fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) -15 19 -25user=> [K(fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) -15 19 -25
+#object[user$eval140$fn__141 0x40021799 "user$eval140$fn__141@40021799"]
+-15
+19
+-25
+user=> [Kuser=> [Kuser=> ) (fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) -15 19 -25)([1@([K((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) -15 19 -25)
+25
+user=> [Kuser=> [Kuser=> 
+[K]0;hh35@gold17: ~/cs214/lab/lab05/clojure[01;32mhh35@gold17[00m:[01;34m~/cs214/lab/lab05/clojure[00m$ exit
+
+Script done on 2022-02-10 12:06:21-05:00 [COMMAND_EXIT_CODE="0"]
